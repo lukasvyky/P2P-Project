@@ -1,0 +1,39 @@
+﻿@using P2P.Models;
+@model MainViewModel
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Main Chat Page</title>
+</head>
+<body>
+
+    <h1>P2P Chat App</h1>
+
+    @using (@Html.BeginForm("UpdateUsername", "Client", FormMethod.Post))
+    {
+        @Html.Label("Enter your Username:", "Username")
+        @Html.TextBox("Username")
+        <button type="submit" value="submit">Update</button>
+    }
+
+    @if (Model.Messages != null)
+    {
+        foreach (var message in Model.Messages)
+        {
+            <p>@message.Username : @message.Text</p>
+        }
+    }
+
+    @using (@Html.BeginForm("SendMessage", "Client", FormMethod.Post))
+    {
+        @Html.Label("Enter your message:", "Message text")
+        @Html.TextArea("Text")
+        <button type="submit" value="submit">Send Message</button>
+    }
+
+
+
+
+
+</body>
+</html>

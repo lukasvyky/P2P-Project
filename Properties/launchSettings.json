@@ -1,0 +1,33 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:61505",
+      "sslPort": 0
+    }
+  },
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "friend": "http://192.168.1.106",
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "SQL": "Server=(localdb)\\\\MSSQLLocalDB;Database=UltraForum;Trusted_Connection=True;MultipleActiveResultSets=true"
+      }
+    },
+    "P2P": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "",
+      "environmentVariables": {
+        "CHAT_APP_UNIQUE_ID": "lukasvyky",
+        "friend": "http://192.168.1.106:5000/api/message/receive",
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://192.168.1.108"
+    }
+  }
+}
