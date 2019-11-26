@@ -38,7 +38,7 @@ namespace P2P.Controllers
             mainService.SaveMessage(message);
             var toSend = new JsonMessage();
             toSend.Message = message;
-            toSend.Client = new IDthing {ID = Message.username };
+            toSend.Client = new IDthing {ID = "lukasvyky"};
 
             mainService.ForwardMessage(toSend);
 

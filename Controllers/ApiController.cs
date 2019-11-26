@@ -24,7 +24,7 @@ namespace P2P.Controllers
         [HttpPost("message/receive")]
         public IActionResult SaveIncomingMessage([FromBody]JsonMessage message)
         {
-            if (message.Client.ID.Equals("lukasvyky"))
+            if (message.Client.ID.Equals(Message.username))
                 return StatusCode(200);
 
             if (message.Message == null || message.Client == null)

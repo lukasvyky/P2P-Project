@@ -19,10 +19,6 @@ namespace P2P.Database
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
            
-
         }
-
-
-
     }
 }
