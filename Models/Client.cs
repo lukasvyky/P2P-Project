@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 namespace P2P.Models
 {
-    public class IDthing
+    public class Client
     {
         public string ID { get; set; }
 
-        public IDthing()
+        public Client()
         {
 
         }

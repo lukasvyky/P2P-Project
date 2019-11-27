@@ -13,7 +13,7 @@
       "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {
-        "friend": "http://192.168.1.106",
+        "friend": "http://192.168.1.173:5001/api/message/receive",
         "ASPNETCORE_ENVIRONMENT": "Development",
         "SQL": "Server=(localdb)\\\\MSSQLLocalDB;Database=UltraForum;Trusted_Connection=True;MultipleActiveResultSets=true"
       }
@@ -21,9 +21,8 @@
     "P2P": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "",
       "environmentVariables": {
-        "CHAT_APP_UNIQUE_ID": "lukasvyky",
+        "UNIQUE_ID": "lukasvyky",
         "friend": "http://192.168.1.106:5000/api/message/receive",
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

@@ -26,9 +26,9 @@ namespace P2P.Controllers
         }
 
         [HttpPost("updateUsername")]
-        public IActionResult UpdateUsername(string username)
+        public IActionResult UpdateUsername(string userName)
         {
-            Message.username = username;
+            Message.username = userName;
             return RedirectToAction("Main");
         }
 
@@ -38,7 +38,7 @@ namespace P2P.Controllers
             mainService.SaveMessage(message);
             var toSend = new JsonMessage();
             toSend.Message = message;
-            toSend.Client = new IDthing {ID = "lukasvyky"};
+            toSend.Client = new Client {ID = Environment.GetEnvironmentVariable("UNIQUE_ID") };
 
             mainService.ForwardMessage(toSend);
 

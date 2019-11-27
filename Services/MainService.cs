@@ -25,7 +25,7 @@ namespace P2P.Services
         {
             using (var currentContext = AppContext) 
             {
-                return currentContext.Messages.ToList();    
+                return currentContext.Messages.Take(10).ToList();    
             } 
         }
 
@@ -42,7 +42,7 @@ namespace P2P.Services
         {
             var client = new HttpClient();
             var stringContent = new StringContent(JsonConvert.SerializeObject(message), Encoding.UTF8, "application/json");
-            var response = await client.PostAsync("http://192.168.1.173:5001/api/message/receive", stringContent);
+            var response = await client.PostAsync(Environment.GetEnvironmentVariable("friend"), stringContent);
 
             if (!response.IsSuccessStatusCode)
             {

@@ -12,7 +12,6 @@ namespace P2P.Models
 
         [Key]
         public int ID { get; set; }
-
         [Required]
         public string Username { get; set; }
         [Required]

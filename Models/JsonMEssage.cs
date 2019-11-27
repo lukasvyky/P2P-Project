@@ -9,7 +9,7 @@ namespace P2P.Models
     {
         public Message Message { get; set; }
 
-        public IDthing Client { get; set; }
+        public Client Client { get; set; }
 
         public JsonMessage()
         {

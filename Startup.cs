@@ -28,8 +28,6 @@ namespace P2P
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
-           //var env = Environment.GetEnvironmentVariable("SQL");
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddDbContext<P2PContext>(builder =>
                                               builder.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
@@ -45,11 +43,9 @@ namespace P2P
             }
             else
             {
-                
                 app.UseHsts();
             }
             app.UseMiddleware<Logging>();
-
             app.UseMvc();
         }
     }

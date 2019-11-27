@@ -24,12 +24,11 @@ namespace P2P.Controllers
         [HttpPost("message/receive")]
         public IActionResult SaveIncomingMessage([FromBody]JsonMessage message)
         {
-            if (message.Client.ID.Equals(Message.username))
+            if (message.Client.ID.Equals(Environment.GetEnvironmentVariable("UNIQUE_ID")))
                 return StatusCode(200);
 
             if (message.Message == null || message.Client == null)
                 return StatusCode(401, new { status = "error", message = "Check your code bro" });
-
 
             var properMessage = new Message
             {
@@ -39,7 +38,6 @@ namespace P2P.Controllers
             };
 
             mainService.SaveMessage(properMessage);
-
             mainService.ForwardMessage(message);
 
             return StatusCode(200, new { status = "ok" });
